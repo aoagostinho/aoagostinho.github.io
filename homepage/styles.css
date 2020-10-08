@@ -1,0 +1,57 @@
+
+th
+{
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border-width: 2px;
+	border-spacing: 0px;
+	border-style: outset;
+	border-color: black;
+	border-collapse: separate;
+	background-color: white;
+}
+
+td
+{
+    height: 50px;
+    width: 250px;
+    text-align: center;
+    vertical-align: middle;
+    border-width: 2px;
+	border-spacing: 0px;
+	border-style: outset;
+	border-color: black;
+	border-collapse: separate;
+	background-color: white;
+}
+
+idCSS1
+{
+    text-align: center;
+}
+
+.style1
+{
+    color: blue;
+}
+
+.style2
+{
+    color: red;
+}
+
+.style3
+{
+    color: green;
+}
+
+.style4
+{
+    color: yellow;
+}
+
+.style5
+{
+    color: purple;
+}
