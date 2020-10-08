@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Task
+{% endblock %}
+
+{% block main %}
+
+    <form action="/edit" method="POST">
+
+        <div class="form-group">
+            <input type="hidden" id="id_edit" name="id_edit" value="{{id_edit}}">
+        </div>
+
+
+        <div class="form-group">
+            <select class = "form-control" name = "priority">
+            <option selected value = "{{priority}}">{{priority}}</option>
+                <option value="Priority 1 - High">Priority 1 - High</option>
+                <option value="Priority 2 - Normal">Priority 2 - Normal</option>
+                <option value="Priority 3 - Low">Priority 3 - Low</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <textarea autocomplete="off" autofocus class="form-control" name="description" placeholder="Description" type="text" value = "{{description}}">{{description}}</textarea>
+        </div>
+        <div class="form-group">
+            <select class = "form-control" name = "status">
+            <option selected value ="{{status}}">{{status}}</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div  style="background-color: white; margin: 0 auto; width: 20%"><p><strong>Due date</strong></p></div>
+            <input autofocus class="form-control" name="duedate" type="date" value = "{{due_date}}">
+        </div>
+
+
+
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+
+
+            <br/>
+
+<button type="button" class="btn btn-warning"><a href="/">Cancell</a></button>
+
+{% endblock %}

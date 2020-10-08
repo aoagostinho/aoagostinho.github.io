@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New Task
+{% endblock %}
+
+{% block main %}
+
+
+    <form action="/new" method="post", "get">
+        <div class="form-group">
+            <select class = "form-control" name = "priority">
+            <option disabled selected value ="">Priority</option>
+                <option value="Priority 1 - High">Priority 1 - High</option>
+                <option value="Priority 2 - Normal">Priority 2 - Normal</option>
+                <option value="Priority 3 - Low">Priority 3 - Low</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <textarea autocomplete="off" autofocus class="form-control" name="description" placeholder="Description" type="text"></textarea>
+        </div>
+
+        <div class="form-group">
+            <select class = "form-control" name = "status">
+            <option disabled selected value ="">Status</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div  style="background-color: white; margin: 0 auto; width: 20%"><p><strong>Due date</strong></p></div>
+            <input autocomplete="off" autofocus class="form-control" name="duedate" placeholder="Due Date" type="date">
+        </div>
+        </br>
+
+
+
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+
+            <br/>
+
+<button type="button" class="btn btn-warning"><a href="/">Cancell</a></button>
+
+{% endblock %}

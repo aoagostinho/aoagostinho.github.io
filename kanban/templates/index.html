@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+
+<table align=center>
+<tr><td style="color:white; background-color:grey">To Do</td>
+{% for tasktd in tasks_todo %}
+    <td class="class1">{{tasktd["priority"]}} <br/><b>Description: </b> {{tasktd["description"]}} <br/><b>Due Date: </b>{{tasktd["due_date"]}}<br/> <b>
+
+<br/>
+<table><tr>
+    <td id='botoes'>
+        <form action="/edit" method="GET">
+        <input type="hidden" name="id_edit" value="{{tasktd["id"]}}"/>
+        <button class="btn btn-primary">Edit</button>
+        </form>
+    </td>
+    <td id='botoes2'>
+        <form action="/delete" method="GET">
+        <input type="hidden" name="id_edit" value="{{tasktd["id"]}}"/>
+        <button class="btn btn-danger">Delete</button>
+        </form>
+    </td>
+</tr>
+</table>
+        </b></td>
+
+    {% endfor %}
+    </tr>
+
+<tr><td style="color:white; background-color:blue">In Progress</td>
+{% for taskip in tasks_inp %}
+    <td class="class1">{{taskip["priority"]}} <br/><b>Description: </b> {{taskip["description"]}} <br/><b>Due Date: </b> {{taskip["due_date"]}} <br/> <b>
+
+<br/>
+<table><tr>
+    <td id='botoes'>
+        <form action="/edit" method="GET">
+        <input type="hidden" name="id_edit" value="{{taskip["id"]}}"/>
+        <button class="btn btn-primary">Edit</button>
+        </form>
+    </td>
+    <td id='botoes2'>
+        <form action="/delete" method="GET">
+        <input type="hidden" name="id_edit" value="{{taskip["id"]}}"/>
+        <button class="btn btn-danger">Delete</button>
+        </form>
+    </td>
+</tr>
+</table>
+
+        </b></td>
+
+
+
+
+    {% endfor %}
+    </tr>
+
+<tr><td style="color:white; background-color:green">Done</td>
+{% for taskdn in tasks_done %}
+    <td class="class1">{{taskdn["priority"]}} <br/><b>Description: </b> {{taskdn["description"]}} <br/><b>Due Date: </b> {{taskdn["due_date"]}} <br/> <b>
+
+<br/>
+<table><tr>
+    <td id='botoes'>
+        <form action="/edit" method="GET">
+        <input type="hidden" name="id_edit" value="{{taskdn["id"]}}"/>
+        <button class="btn btn-primary">Edit</button>
+        </form>
+    </td>
+    <td id='botoes2'>
+        <form action="/delete" method="GET">
+        <input type="hidden" name="id_edit" value="{{taskdn["id"]}}"/>
+        <button class="btn btn-danger">Delete</button>
+        </form>
+    </td>
+</tr>
+</table>
+        </b></td>
+    {% endfor %}
+    </tr>
+
+</table>
+
+    <br/>
+
+<button type="button" class="btn btn-outline-success"><a href="/new">Create a New Task</a></button>
+
+
+<script>
+
+    var today = new Date().toDateString();
+    window.alert('Today is ' + today + ', check your due dates!')
+</script>
+
+
+
+
+
+{% endblock %}
